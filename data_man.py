@@ -41,11 +41,15 @@ class data_explore:
         for col in df_columns:
             # print("Column name = ", col)
 
+            index_v = self.df[self.df[col] == -9999].index.tolist()
+
             df_clean = self.df.drop(self.df[self.df[col] == -9999].index)
 
         # print((df_clean == -9999).any())
 
         df_clean.to_csv(self.name + "_Clean.csv")
+
+        return index_v
 
 
 
