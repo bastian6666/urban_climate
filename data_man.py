@@ -36,17 +36,16 @@ class data_explore:
 
         self.df.columns = df_columns
 
-        print((self.df == -9999).any())
+        # print((self.df == -9999).any())
 
         for col in df_columns:
-            print("Column name = ", col)
+            # print("Column name = ", col)
 
             df_clean = self.df.drop(self.df[self.df[col] == -9999].index)
 
-        print((df_clean == -9999).any())
+        # print((df_clean == -9999).any())
 
         df_clean.to_csv(self.name + "_Clean.csv")
 
-        return df_clean
 
 
