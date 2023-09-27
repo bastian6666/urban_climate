@@ -13,7 +13,8 @@ st.set_page_config(
 )
 
 st.write("# Welcome to my Urban Climate Homewrok! 👋")
-
+st.write("### Name: Sebastián Sánchez Bernal")
+st.write("### BU ID: U13288206")
 st.sidebar.success("Select a part of the homework.")
 
 st.markdown(
