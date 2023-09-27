@@ -43,4 +43,79 @@ st.plotly_chart(fig, use_container_width=True)
 # Streamlit widgets automatically run the script from top to bottom. Since
 # this button is not connected to any other logic, it just causes a plain
 # rerun.
+
+"""
+This code reads the UHI intensity data from the CSV files and creates a line chart using the `plotly.graph_objects` module. 
+The resulting chart displays the UHI intensity values for maximum, mean, and minimum temperature values across different months. 
+The chart includes a title, x-axis label, and y-axis label.
+
+To run this code and visualize the UHI intensity values, make sure you have the necessary libraries imported and the required CSV 
+files available in the specified file paths.
+"""
+
+df_max = pd.read_csv("UHI_intensityMaximum T.csv")
+df_mean = pd.read_csv("UHI_intensityMean T.csv")
+df_min = pd.read_csv("UHI_intensityMinimum T.csv")
+
+
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(x=df_max["Month"], y=df_max["Mean"],
+                    mode='lines+markers',
+                    name='Max'))
+fig.add_trace(go.Scatter(x=df_mean["Month"], y=df_mean["Mean"],
+                    mode='lines+markers',
+                    name='Mean'))
+fig.add_trace(go.Scatter(x=df_min["Month"], y=df_min["Mean"],
+                    mode='lines+markers',
+                    name='Min'))
+
+
+fig.update_layout(
+    updatemenus=[
+        dict(
+            active=0,
+            buttons=list([
+                dict(label="All",
+                     method="update",
+                     args=[{"visible": [True, True, True]},
+                           {"title": "UHI Intensity for Max, Min and Mean Values of Temperature",
+                            "annotations": []}]),
+                dict(label="Min",
+                     method="update",
+                     args=[{"visible": [False, False, True]},
+                           {"title": "UHI Intensity for Minimum Values of Temperature",
+                            "annotations": []}]),
+                dict(label="Max",
+                     method="update",
+                     args=[{"visible": [True, False, False]},
+                           {"title": "UHI Intensity for Maximum Values of Temperature",
+                            "annotations": []}]),
+                dict(label="Mean",
+                     method="update",
+                     args=[{"visible": [False, True, False]},
+                           {"title": "UHI Intensity for Mean Values of Temperature",
+                            "annotations": []}]),
+            ]),
+        )
+    ])
+
+fig.update_layout(title='UHI Intensity for Max, Min and Mean Values of Temperature',
+                   xaxis_title='Month',
+                   yaxis_title='UHI Intensity')
+
+st.plotly_chart(fig, use_container_width=True)
+
+st.markdown("""
+### Discussion: 
+
+a) which season has the strongest urban heat island effect and what are the possible causes.
+
+    * Answer: 
+
+b) which temperature (mean, maximum, or minimum) yields the strongest urban heat island effect. What are the possible causes?
+
+    * Answer: 
+""")
+
 st.button("Re-run")
