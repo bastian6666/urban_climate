@@ -48,12 +48,24 @@ st.plotly_chart(fig, use_container_width=True)
 """
 Focus on daily results in the summer (June, July, August) seasons in the period of 2000-2016 (you should have 17 years x 92 summer days per year = 1564 summer days). Plot the daily urban heat island intensity (use different subplots or subfigures for daily mean, maximum, and minimum temperatures) as a function of the daily mean temperature of the rural site and fit a linear relation between the two. How does the urban heat island intensity change with the mean temperature of the rural site?
 
-    * Discussion:
+    * Discussion: Following Figure 0.4 we can understand the correlation between UHI 
+    Intensity and the Rural temperature. According to the data, we can establish that 
+    the UHI Intensity against the minimum rural temperatures has an inverse correlation, 
+    which means that when the minimum rural temperature increases the UHI Intensity 
+    decreases. In the case of maximum temperature, we observe a positive correlation 
+    between the increment of the rural temperature and the UHI Intensity.
 
 Focus on daily results in the summer (June, July, August) seasons in the period of 2000-2016 (you should have 17 years x 92 summer days per year = 1564 summer days). Plot the daily urban heat island intensity (use different subplots or subfigures for daily mean, maximum, and minimum temperatures) as a function of the daily mean temperature of the urban site and fit a
 linear relation between the two. How does the urban heat island intensity change with the mean temperature of the urban site?
 
-    * Discussion:
+    * Discussion: In this case, we can observe that for urban temperatures exists a 
+    positive correlation between minimum and maximum temperatures and the UHI Intensity. 
+    In particular for min- imum temperatures, the slope in the linear regression is 
+    positive but almost zero. Interpret- ing this we can say that for minimum temperatures 
+    the increment in the temperature values doesn’t represent a meaningful change in the 
+    UHI Intensity effect. Now, in general, we can observe the mean temperature values and 
+    say that the relation between the increment in the urban temperature and the UHI 
+    Intensity is positive and more meaningful than the one in the rural area.
 """
 
 
@@ -197,7 +209,12 @@ st.markdown("""
 
 One of the questions researchers have been trying to figure out is whether the UHI intensity increases or decreases as the climate system warms up (i.e., in a warming climate). Your results in 1.4 and 1.5 probably give you different answers to this question. Which one do you think is correct or more correct? Discuss your results.
 
-    * Answer: 
+    * Answer: If we observe the mean temperature values of the rural and urban areas, 
+            we can say that in general exists a positive correlation between the 
+            UHI Intensity and the increment in temperature. Anyway, I think that 
+            in cases of minimum temperature the correlation changes (negative or 
+            almost zero slope) mainly because the air is becoming turbulent as the 
+            temperature increases and this reduces the UHI Intensity effect.
             """)
 
 st.button("Re-run")

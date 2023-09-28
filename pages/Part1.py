@@ -111,11 +111,22 @@ st.markdown("""
 
 a) which season has the strongest urban heat island effect and what are the possible causes.
 
-    * Answer: 
+    * Answer: Following the mean values in figure 0.1 we can observe that the periods with more 
+            UHI Intensity effect are Summer and Fall. In particular, you can see a significant 
+            increment in the UHI Intensity in June with respect to the previous month. If we observe 
+            the values obtained from the Maximum temperature dataset, we see that the main UHI Intensity 
+            is concentrated in the summer period. This could be produced by multiple factors. One of the 
+            main factors is the increment in the incident solar radiation during the summer. Also, during 
+            the summer we have heat waves that can lead to an increment in the UHI Intensity.
+
 
 b) which temperature (mean, maximum, or minimum) yields the strongest urban heat island effect. What are the possible causes?
 
-    * Answer: 
+    * Answer: The temperature that yields the strongest UHI Intensity is the minimum temperature. 
+            This could be because the maximum temperature occurs during the day when the air in the 
+            canopy layer is more turbulent which produces more mixing in the air, giving a minor 
+            difference between the temperature in the rural area and the urban area. Therefore, 
+            the minimum temperatures that occur at night present more UHI effects.
 """)
 
 st.button("Re-run")

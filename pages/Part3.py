@@ -65,7 +65,12 @@ plot_heat_waves(UHI_df = "UHI_mean_Non_heat_wave.csv", T_df = "Urbanmean_Non_hea
 
 st.markdown("""Compare the results in 1.8, 1.9 and 1.3. Discuss your findings in terms of whether the urban heat island intensity is enhanced during heat wave days or not.
             
-            Discussion: 
+            Discussion: In order to answer this question we can 
+            compare the linear regression in Figure 0.8 and Figure 0.9. 
+            According to the graphs, we can say that the heat waves enhanced 
+            drastically the UHI Intensity. The non-heat wave days still show 
+            a positive linear relation between the mean temperature and the 
+            UHI Intensity but not as big as the one in the heat wave days.
             """)
 
 st.sidebar.header("Part 3")
