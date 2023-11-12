@@ -73,7 +73,7 @@ def plot_diurnal_cycles(df_crop, df_grass, df_urban, variable):
 
     # Add gridlines
     plt.grid(True)
-
+    plt.savefig(f'a)_{variable}.pdf', format='pdf')
     plt.show()
 
 # Plot diurnal cycles for each variable
@@ -133,7 +133,7 @@ def plot_diurnal_cycles(df, site):
 
     # Add gridlines
     plt.grid(True)
-
+    plt.savefig(f'b)_{site}.pdf', format='pdf')
     plt.show()
 
 # Plot diurnal cycles for each dataframe
@@ -179,7 +179,7 @@ def plot_diurnal_cycles_heat_index(df_crop, df_grass, df_urban):
 
     # Add gridlines
     plt.grid(True)
-
+    plt.savefig(f'd)_heat_index.pdf', format='pdf')
     plt.show()
 
 # Plot diurnal cycles for all dataframes
@@ -276,7 +276,7 @@ def compute_densities(df, site):
 
     return df
 
-def plot_diurnal_cycles(df_crop, df_grass, df_urban, site1, site2, site3):
+def plot_diurnal_cycles_densities(df_crop, df_grass, df_urban, site1, site2, site3):
     fig, axs = plt.subplots(1, 2, figsize=(12, 8))
 
     # Plot air density for all three sites
@@ -302,10 +302,11 @@ def plot_diurnal_cycles(df_crop, df_grass, df_urban, site1, site2, site3):
     axs[1].grid(True)
 
     plt.tight_layout()
+    plt.savefig('f)_bonus.pdf', format='pdf')
     plt.show()
 
 df_crop = compute_densities(df_crop, 'crop')
 df_grass = compute_densities(df_grass, 'grass')
 df_urban = compute_densities(df_urban, '26_5m')
 
-plot_diurnal_cycles(df_crop, df_grass, df_urban, 'crop', 'grass', '26_5m')
+plot_diurnal_cycles_densities(df_crop, df_grass, df_urban, 'crop', 'grass', '26_5m')
